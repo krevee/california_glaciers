@@ -1,0 +1,27 @@
+CREATE TABLE public.people (
+	contact_id integer NOT NULL,
+	surname text,
+	givennames text,
+	prof_title text,
+	affiliation text,
+	department text,
+	address1 text,
+	address2 text,
+	city text,
+	state_province text,
+	postal_code text,
+	country_code char(2),
+	office_loc text,
+	url_primary text,
+	url_secondary text,
+	workphone_primary text,
+	workphone_secondary text,
+	workfax text,
+	homephone text,
+	mobilephone text,
+	email_primary text,
+	email_secondary text,
+	comment text,
+	CONSTRAINT people_pk PRIMARY KEY (contact_id)
+
+);
