@@ -1,5 +1,5 @@
 CREATE TABLE public.glaciers_variable (
-	glacier_id character varying(20) NOT NULL,
+	glacier_id character varying(20),
 	submission_id integer NOT NULL,
 	glac_name character varying(28),
 	area numeric,
@@ -13,7 +13,7 @@ CREATE TABLE public.glaciers_variable (
 	in_basin text,
 	num_basins smallint,
 	fcode integer DEFAULT 37800,
-	date timestamp NOT NULL,
+	date text(20),
 	geom geometry,
 	max_width numeric,
 	max_length numeric,
@@ -55,6 +55,6 @@ CREATE TABLE public.glaciers_variable (
 	orient_acc text,
 	orient_abl text,
 	remarks text,
-	CONSTRAINT glims_polygons_pkey PRIMARY KEY (glacier_id),
-	CONSTRAINT glaciers_glac_id_un UNIQUE (glacier_id)
+	CONSTRAINT glaciers_variable_pkey PRIMARY KEY (submission_id),
+	CONSTRAINT glaciers_submission_id_un UNIQUE (submission_id)
 );
